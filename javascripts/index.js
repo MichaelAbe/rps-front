@@ -55,6 +55,19 @@ function thePoems() {
     `
 }
 
+function poemListTemplate(poem) {
+    let div = document.createElement('div');
+    let h4 = document.createElement('h4');
+    let p = document.createElement('p');
+    let poemsDiv = document.getElementById('poems')
+    h4.innerText = poem.title;
+    p.innerText = poem.poem;
+
+    div.appendChild(h4);
+    div.appendChild(p);  
+    poemsDiv.appendChild(div);
+}
+
 
 function renderTemp() {
     resetMain();
@@ -82,5 +95,5 @@ function submitPoemForm(e) {
 
 document.addEventListener("DOMContentLoaded", function() {
     //renderTemp();
-    renderPoems
+    renderPoems();
 })
