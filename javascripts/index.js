@@ -43,11 +43,28 @@ function poemTemplate() {
     `;
 }
 
+function thePoems() {
+    return `
+    <h3>Poems</h3>
+    <div id="poems">
+        <div> 
+            <h4>Title</h4>
+            <p>Poem goes here</p>
+        </div>
+    </div>
+    `
+}
+
 
 function renderTemp() {
     resetMain();
     main().innerHTML = poemTemplate();
     form().addEventListener('submit', submitPoemForm)
+}
+
+function renderPoems() {
+    resetMain();
+    main().innerHTML = thePoems();
 }
 
 function submitPoemForm(e) {
@@ -64,5 +81,6 @@ function submitPoemForm(e) {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    renderTemp();
+    //renderTemp();
+    renderPoems
 })
