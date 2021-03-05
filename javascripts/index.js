@@ -1,5 +1,5 @@
 
-
+const poems = [];
 
 function main() {
     return document.getElementById("main");
