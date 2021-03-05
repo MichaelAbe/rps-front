@@ -95,14 +95,14 @@ function submitPoemForm(e) {
 
     poems.push({
         title: titleInput().value,
-        content: poemInput().value
+        poem: poemInput().value
     });
-    resetPoemInput();
+    renderPoems();
 }
 
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    //renderTemp();
-    renderPoems();
+    renderTemp();
+    //renderPoems();
 })
