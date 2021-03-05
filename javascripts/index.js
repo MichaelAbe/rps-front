@@ -13,6 +13,10 @@ function poemInput() {
     return document.getElementById('poem')
 }
 
+function form() {
+    return document.getElementById('form')
+}
+
 function resetPoemInput() {
     titleInput().innerHTML = "";
     poemInput().innerHTML = "";
@@ -43,6 +47,12 @@ function poemTemplate() {
 function renderTemp() {
     resetMain();
     main().innerHTML = poemTemplate();
+    form().addEventListener('submit', submitPoemForm)
+}
+
+function submitPoemForm(e) {
+    e.preventDefault();
+    alert('Your Poem has been added')
 }
 
 document.addEventListener("DOMContentLoaded", function() {
