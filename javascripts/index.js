@@ -1,5 +1,13 @@
 
-const poems = [];
+const poems = [
+    {title: 'Poem 1', poem: 'This is poem 1'},
+    {title: 'Poem 2', poem: 'This is poem 2'},
+    {title: 'Poem 3', poem: 'This is poem 3'},
+    {title: 'Poem 4', poem: 'This is poem 4'},
+    {title: 'Poem 5', poem: 'This is poem 5'},
+    {title: 'Poem 6', poem: 'This is poem 6'},
+    {title: 'Poem 7', poem: 'This is poem 7'},
+];
 
 function main() {
     return document.getElementById("main");
@@ -46,16 +54,11 @@ function poemTemplate() {
 function thePoems() {
     return `
     <h3>Poems</h3>
-    <div id="poems">
-        <div> 
-            <h4>Title</h4>
-            <p>Poem goes here</p>
-        </div>
-    </div>
+    <div id="poems"></div>
     `
 }
 
-function poemListTemplate(poem) {
+function renderPoem(poem) {
     let div = document.createElement('div');
     let h4 = document.createElement('h4');
     let p = document.createElement('p');
@@ -65,6 +68,7 @@ function poemListTemplate(poem) {
 
     div.appendChild(h4);
     div.appendChild(p);  
+
     poemsDiv.appendChild(div);
 }
 
@@ -78,7 +82,12 @@ function renderTemp() {
 function renderPoems() {
     resetMain();
     main().innerHTML = thePoems();
+
+    poems.forEach(function (poem) {
+        renderPoem(poem)
+    })
 }
+
 
 function submitPoemForm(e) {
     e.preventDefault();
