@@ -52,8 +52,16 @@ function renderTemp() {
 
 function submitPoemForm(e) {
     e.preventDefault();
-    alert('Your Poem has been added')
+    alert('Your Poem has been added');
+
+    poems.push({
+        title: titleInput().value,
+        content: poemInput().value
+    });
+    resetPoemInput();
 }
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     renderTemp();
