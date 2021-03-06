@@ -110,11 +110,14 @@ function submitPoemForm(e) {
 
 
 function formLinkEvent() {
-
+    formLink().addEventListener('click', function(e) {
+        e.preventDefault();
+        renderTemp();
+    })
 }
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    renderTemp();
-    //renderPoems();
+    //renderTemp();
+    formLinkEvent();
 })
