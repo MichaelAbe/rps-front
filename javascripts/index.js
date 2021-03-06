@@ -1,12 +1,12 @@
 
 const poems = [
-    {title: 'Poem 1', poem: 'This is poem 1'},
-    {title: 'Poem 2', poem: 'This is poem 2'},
-    {title: 'Poem 3', poem: 'This is poem 3'},
-    {title: 'Poem 4', poem: 'This is poem 4'},
-    {title: 'Poem 5', poem: 'This is poem 5'},
-    {title: 'Poem 6', poem: 'This is poem 6'},
-    {title: 'Poem 7', poem: 'This is poem 7'},
+    // {title: 'Poem 1', poem: 'This is poem 1'},
+    // {title: 'Poem 2', poem: 'This is poem 2'},
+    // {title: 'Poem 3', poem: 'This is poem 3'},
+    // {title: 'Poem 4', poem: 'This is poem 4'},
+    // {title: 'Poem 5', poem: 'This is poem 5'},
+    // {title: 'Poem 6', poem: 'This is poem 6'},
+    // {title: 'Poem 7', poem: 'This is poem 7'},
 ];
 
 function main() {
@@ -23,6 +23,14 @@ function poemInput() {
 
 function form() {
     return document.getElementById('form')
+}
+
+function formLink() {
+    return document.getElementById('form-link');
+}
+
+function poemsLink() {
+    return document.getElementById('poems-link');
 }
 
 function resetPoemInput() {
@@ -100,6 +108,10 @@ function submitPoemForm(e) {
     renderPoems();
 }
 
+
+function formLinkEvent() {
+
+}
 
 
 document.addEventListener("DOMContentLoaded", function() {
