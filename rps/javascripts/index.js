@@ -9,6 +9,8 @@ let poems = [
     // {title: 'Poem 7', poem: 'This is poem 7'},
 ];
 
+const baseUrl = 'http://localhost:3000'
+
 function main() {
     return document.getElementById("main");
 } 
@@ -34,7 +36,7 @@ function poemsLink() {
 }
 
 function getPoems() {
-    fetch('http://localhost:3000/poems')
+    fetch(baseUrl + '/poems')
     .then(function(response) {
         return response.json();
     })
@@ -110,14 +112,32 @@ function renderPoems() {
 
 function submitPoemForm(e) {
     e.preventDefault();
+    let strongParams = {
+        poem: {
+            title: titleInput().value, 
+            content: poemInput().value
+        }
+    }
+    fetch(baseUrl + '/poems', {
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(strongParams),
+        method: "POST"
+    })
+    .then( function(response) {
+        return response.json();
+    })
+    .then( function(poem) {
+        poems.push(poem)
+        renderPoems();
+    })
     alert('Your Poem has been added');
 
-    poems.push({
-        title: titleInput().value,
-        content: poemInput().value
-    });
-    renderPoems();
+   
 }
+
 
 
 function formLinkEvent() {
