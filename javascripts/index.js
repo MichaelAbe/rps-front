@@ -116,8 +116,16 @@ function formLinkEvent() {
     })
 }
 
+function poemsLinkEvent() {
+    poemsLink().addEventListener('click', function(e) {
+        e.preventDefault();
+        renderPoems();
+    })
+}
+
 
 document.addEventListener("DOMContentLoaded", function() {
     //renderTemp();
     formLinkEvent();
+    poemsLinkEvent();
 })
