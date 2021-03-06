@@ -42,6 +42,7 @@ function getPoems() {
     })
     .then(function(data) {
         poems = data
+        console.log(poems)
         renderPoems()
     })
 }
@@ -83,12 +84,25 @@ function renderPoem(poem) {
     let div = document.createElement('div');
     let h4 = document.createElement('h4');
     let p = document.createElement('p');
+    let likes = document.createElement('h6')
+    let button = document.createElement('button')
     let poemsDiv = document.getElementById('poems')
+
     h4.innerText = poem.title;
     p.innerText = poem.content;
+    // likes.innerText = poem.likes
+    button.id = poem.id
+    button.innerText = poem.likes
+    
+    
 
     div.appendChild(h4);
-    div.appendChild(p);  
+    div.appendChild(p);
+    div.appendChild(likes);
+    div.appendChild(button);
+
+    
+     
 
     poemsDiv.appendChild(div);
 }
@@ -138,6 +152,10 @@ function submitPoemForm(e) {
    
 }
 
+
+function likeButtonEvent() {
+
+}
 
 
 function formLinkEvent() {
