@@ -1,5 +1,5 @@
 
-const poems = [
+let poems = [
     // {title: 'Poem 1', poem: 'This is poem 1'},
     // {title: 'Poem 2', poem: 'This is poem 2'},
     // {title: 'Poem 3', poem: 'This is poem 3'},
@@ -39,7 +39,8 @@ function getPoems() {
         return response.json();
     })
     .then(function(data) {
-        console.log(data)
+        poems = data
+        renderPoems()
     })
 }
 
@@ -136,6 +137,7 @@ function poemsLinkEvent() {
 
 document.addEventListener("DOMContentLoaded", function() {
     //renderTemp();
+    getPoems();
     formLinkEvent();
     poemsLinkEvent();
 })
