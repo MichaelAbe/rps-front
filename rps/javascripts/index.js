@@ -33,6 +33,16 @@ function poemsLink() {
     return document.getElementById('poems-link');
 }
 
+function getPoems() {
+    fetch('http://localhost:3000/poems')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        console.log(data)
+    })
+}
+
 function resetPoemInput() {
     titleInput().innerHTML = "";
     poemInput().innerHTML = "";
