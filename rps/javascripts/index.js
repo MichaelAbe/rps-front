@@ -18,7 +18,7 @@ function titleInput() {
 }
 
 function poemInput() {
-    return document.getElementById('poem')
+    return document.getElementById('content')
 }
 
 function form() {
@@ -51,8 +51,8 @@ function poemTemplate() {
                 <input type="text" name="title" id="title">
             </div>
             <div class="input-field">
-                <label for="poem">Poem</label> <br>
-                <textarea name="poem" id="poem" cols="30" rows="10"></textarea>
+                <label for="content">Poem</label> <br>
+                <textarea name="poem" id="content" cols="30" rows="10"></textarea>
             </div>
             <input type="submit" value="Contribute your poem">
         </form>
@@ -72,7 +72,7 @@ function renderPoem(poem) {
     let p = document.createElement('p');
     let poemsDiv = document.getElementById('poems')
     h4.innerText = poem.title;
-    p.innerText = poem.poem;
+    p.innerText = poem.content;
 
     div.appendChild(h4);
     div.appendChild(p);  
@@ -103,7 +103,7 @@ function submitPoemForm(e) {
 
     poems.push({
         title: titleInput().value,
-        poem: poemInput().value
+        content: poemInput().value
     });
     renderPoems();
 }
