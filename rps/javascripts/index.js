@@ -123,9 +123,19 @@ function renderPoem(poem) {
 
 function deletePoem(e) {
     e.preventDefault();
-
-    debugger
-
+    let id = e.target.dataset.id
+    fetch(baseUrl + '/poems/' + id, {
+        method: 'DELETE'
+    })
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        poems = poems.filter(function(poem) {
+            return poem.id !== data.id;
+        })
+        renderPoems();
+    })
 }
 
 function renderTemp() {
