@@ -11,6 +11,19 @@ let poems = [
 
 const baseUrl = 'http://localhost:3000'
 
+
+let heartStates = {
+    "♡": "♥",
+    "♥": "♡"
+  };
+  
+  let colorStates = {
+    "red" : "",
+    "": "red"
+  };
+  
+
+
 function main() {
     return document.getElementById("main");
 } 
@@ -84,29 +97,36 @@ function renderPoem(poem) {
     let div = document.createElement('div');
     let h4 = document.createElement('h4');
     let p = document.createElement('p');
-    let likes = document.createElement('h6')
-    let button = document.createElement('button')
+    let likesButton = document.createElement('button')
     let poemsDiv = document.getElementById('poems')
+    let deleteButtton = document.createElement('button')
+    
+   deleteButtton.dataset.id = poem.id
+   deleteButtton.setAttribute('href', '#')
+   deleteButtton.innerText = 'Delete'
+   likesButton.dataset.id = poem.id
+   likesButton.setAttribute('href', '#')
+   likesButton.innerText = `${poem.likes} likes`
+
+   deleteButtton.addEventListener('click', deletePoem)
 
     h4.innerText = poem.title;
     p.innerText = poem.content;
-    // likes.innerText = poem.likes
-    button.id = poem.id
-    button.innerText = poem.likes
-    
-    
-
+   
     div.appendChild(h4);
     div.appendChild(p);
-    div.appendChild(likes);
-    div.appendChild(button);
-
-    
-     
+    div.appendChild(deleteButtton)
+    div.appendChild(likesButton);
 
     poemsDiv.appendChild(div);
 }
 
+function deletePoem(e) {
+    e.preventDefault();
+
+    debugger
+
+}
 
 function renderTemp() {
     resetMain();
@@ -154,7 +174,7 @@ function submitPoemForm(e) {
 
 
 function likeButtonEvent() {
-
+    document.getElementById()
 }
 
 
