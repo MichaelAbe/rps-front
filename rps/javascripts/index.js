@@ -108,7 +108,8 @@ function renderPoem(poem) {
    likesButton.setAttribute('href', '#')
    likesButton.innerText = `${poem.likes} likes`
 
-   deleteButtton.addEventListener('click', deletePoem)
+    likesButton.addEventListener('click', addLike)
+    deleteButtton.addEventListener('click', deletePoem)
 
     h4.innerText = poem.title;
     p.innerText = poem.content;
@@ -137,6 +138,45 @@ function deletePoem(e) {
         renderPoems();
     })
 }
+
+function addLike(e) {
+    e.preventDefault();
+
+    let button = e.target
+    let id = e.target.dataset.id
+    
+    let likes = parseInt(e.target.innerText.split(" ")[0])
+    // let currentPoem = document.getElementById()
+    //let likes = 
+    fetch(baseUrl + '/poems/' + id, {
+        method: 'PATCH', 
+        headers: {
+            'Content-Type': 'application/json', 
+        },
+        body: JSON.stringify({likes: likes += 1 })
+    })
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        //debugger
+        button.innerText = data.likes + " likes"
+    }) 
+}
+
+
+function getThisPoem() {
+    fetch(baseUrl + '/poems')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        poems = data
+        console.log(poems)
+        renderPoems()
+    })
+}
+
 
 function renderTemp() {
     resetMain();
