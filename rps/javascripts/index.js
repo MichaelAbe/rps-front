@@ -1,4 +1,5 @@
 
+
 let poems = [
     // {title: 'Poem 1', poem: 'This is poem 1'},
     // {title: 'Poem 2', poem: 'This is poem 2'},
@@ -145,7 +146,7 @@ function addLike(e) {
     let button = e.target
     let id = e.target.dataset.id
     
-    let likes = parseInt(e.target.innerText.split(" ")[0])
+    let likes = parseInt(e.target.innerText.split(" ")[0]) 
     // let currentPoem = document.getElementById()
     //let likes = 
     fetch(baseUrl + '/poems/' + id, {
