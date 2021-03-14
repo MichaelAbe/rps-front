@@ -305,69 +305,69 @@ function freeVerseClick() {
 }
 
 function epicClick() {
-    document.getElementById('free verse').addEventListener('click', function(e) {
+    document.getElementById('epic').addEventListener('click', function(e) {
         e.preventDefault();
         document.getElementById("dropdownMenuButton").innerHTML = "Epic"
     })
 }
 
 function haikuClick() {
-    document.getElementById('free verse').addEventListener('click', function(e) {
+    document.getElementById('haiku').addEventListener('click', function(e) {
         e.preventDefault();
         document.getElementById("dropdownMenuButton").innerHTML = "Haiku"
     })
 }
 
 function narrativeClick() {
-    document.getElementById('free verse').addEventListener('click', function(e) {
+    document.getElementById('narrative').addEventListener('click', function(e) {
         e.preventDefault();
         document.getElementById("dropdownMenuButton").innerHTML = "Narrative"
     })
 }
 
 function pastoralClick() {
-    document.getElementById('free verse').addEventListener('click', function(e) {
+    document.getElementById('pastoral').addEventListener('click', function(e) {
         e.preventDefault();
         document.getElementById("dropdownMenuButton").innerHTML = "Pastoral"
     })
 }
 function sonnetClick() {
-    document.getElementById('free verse').addEventListener('click', function(e) {
+    document.getElementById('sonnet').addEventListener('click', function(e) {
         e.preventDefault();
         document.getElementById("dropdownMenuButton").innerHTML = "Sonnet"
     })
 }
 
 function odeClick() {
-    document.getElementById('free verse').addEventListener('click', function(e) {
+    document.getElementById('ode').addEventListener('click', function(e) {
         e.preventDefault();
         document.getElementById("dropdownMenuButton").innerHTML = "Ode"
     })
 }
 
 function limerickClick() {
-    document.getElementById('free verse').addEventListener('click', function(e) {
+    document.getElementById('limerick').addEventListener('click', function(e) {
         e.preventDefault();
         document.getElementById("dropdownMenuButton").innerHTML = "Limerick"
     })
 }
 
 function balladClick() {
-    document.getElementById('free verse').addEventListener('click', function(e) {
+    document.getElementById('ballad').addEventListener('click', function(e) {
         e.preventDefault();
         document.getElementById("dropdownMenuButton").innerHTML = "Ballad"
     })
 }
 
 function soliloquyClick() {
-    document.getElementById('free verse').addEventListener('click', function(e) {
+    document.getElementById('soliloquy').addEventListener('click', function(e) {
         e.preventDefault();
         document.getElementById("dropdownMenuButton").innerHTML = "Soliloquy"
     })
 }
 
 function villanelleClick() {
-    document.getElementById('free verse').addEventListener('click', function(e) {
+    document.getElementById('villanelle').addEventListener('click', function(e) {
         e.preventDefault();
         document.getElementById("dropdownMenuButton").innerHTML = "Villanele"
     })
