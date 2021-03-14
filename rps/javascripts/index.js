@@ -37,6 +37,10 @@ function poemInput() {
     return document.getElementById('content')
 }
 
+// function categoryInput() {
+//     return document.getElementById()
+// }
+
 function form() {
     return document.getElementById('form')
 }
@@ -89,17 +93,17 @@ function poemTemplate() {
             Select a category
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Free Verse</a>
-            <a class="dropdown-item" href="#">Epic</a>
-            <a class="dropdown-item" href="#">Haiku</a>
-            <a class="dropdown-item" href="#">Narrative</a>
-            <a class="dropdown-item" href="#">Pastoral</a>
-            <a class="dropdown-item" href="#">Sonnet</a>
-            <a class="dropdown-item" href="#">Ode</a>
-            <a class="dropdown-item" href="#">Limerick</a>
-            <a class="dropdown-item" href="#">Ballad</a>
-            <a class="dropdown-item" href="#">Soliloquy</a>
-            <a class="dropdown-item" href="#">Villanelle</a>
+            <a class="dropdown-item" id="free verse" href="#">Free Verse</a>
+            <a class="dropdown-item" id="epic" href="#">Epic</a>
+            <a class="dropdown-item" id="haiku" href="#">Haiku</a>
+            <a class="dropdown-item" id="narrative" href="#">Narrative</a>
+            <a class="dropdown-item" id="pastoral" href="#">Pastoral</a>
+            <a class="dropdown-item" id="sonnet" href="#">Sonnet</a>
+            <a class="dropdown-item" id="ode" href="#">Ode</a>
+            <a class="dropdown-item" id="limerick" href="#">Limerick</a>
+            <a class="dropdown-item" id="ballad" href="#">Ballad</a>
+            <a class="dropdown-item" id="soliloquy" href="#">Soliloquy</a>
+            <a class="dropdown-item" id="villanelle" href="#">Villanelle</a>
 
             </div>
             
@@ -219,7 +223,9 @@ function getThisPoem() {
 function renderTemp() {
     resetMain();
     main().innerHTML = poemTemplate();
+    freeVerseClick();
     form().addEventListener('submit', submitPoemForm)
+
 }
 
 function renderPoems() {
@@ -237,7 +243,8 @@ function submitPoemForm(e) {
     let strongParams = {
         poem: {
             title: titleInput().value, 
-            content: poemInput().value
+            content: poemInput().value,
+            // category: categoryInput().value   
         }
     }
     fetch(baseUrl + '/poems', {
@@ -279,6 +286,98 @@ function poemsLinkEvent() {
         renderPoems();
     })
 }
+
+function freeVerseClick() {
+    document.getElementById('free verse').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById("dropdownMenuButton").innerHTML = "Free Verse"
+    })
+}
+
+function epicClick() {
+    document.getElementById('free verse').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById("dropdownMenuButton").innerHTML = "Epic"
+    })
+}
+
+function haikuClick() {
+    document.getElementById('free verse').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById("dropdownMenuButton").innerHTML = "Haiku"
+    })
+}
+
+function narrativeClick() {
+    document.getElementById('free verse').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById("dropdownMenuButton").innerHTML = "Narrative"
+    })
+}
+
+function pastoralClick() {
+    document.getElementById('free verse').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById("dropdownMenuButton").innerHTML = "Pastoral"
+    })
+}
+function sonnetClick() {
+    document.getElementById('free verse').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById("dropdownMenuButton").innerHTML = "Sonnet"
+    })
+}
+
+function odeClick() {
+    document.getElementById('free verse').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById("dropdownMenuButton").innerHTML = "Ode"
+    })
+}
+
+function limerickClick() {
+    document.getElementById('free verse').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById("dropdownMenuButton").innerHTML = "Limerick"
+    })
+}
+
+function balladClick() {
+    document.getElementById('free verse').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById("dropdownMenuButton").innerHTML = "Ballad"
+    })
+}
+
+function soliloquyClick() {
+    document.getElementById('free verse').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById("dropdownMenuButton").innerHTML = "Soliloquy"
+    })
+}
+
+function villanelleClick() {
+    document.getElementById('free verse').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById("dropdownMenuButton").innerHTML = "Villanele"
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
