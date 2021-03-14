@@ -82,7 +82,32 @@ function poemTemplate() {
                 <label for="content">Poem</label> <br>
                 <textarea name="poem" id="content" cols="30" rows="10"></textarea>
             </div>
+            
+            
+            <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Select a category
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Free Verse</a>
+            <a class="dropdown-item" href="#">Epic</a>
+            <a class="dropdown-item" href="#">Haiku</a>
+            <a class="dropdown-item" href="#">Narrative</a>
+            <a class="dropdown-item" href="#">Pastoral</a>
+            <a class="dropdown-item" href="#">Sonnet</a>
+            <a class="dropdown-item" href="#">Ode</a>
+            <a class="dropdown-item" href="#">Limerick</a>
+            <a class="dropdown-item" href="#">Ballad</a>
+            <a class="dropdown-item" href="#">Soliloquy</a>
+            <a class="dropdown-item" href="#">Villanelle</a>
+
+            </div>
+            
+             
             <input type="submit" value="Contribute your poem">
+            </div>
+            
+
         </form>
     `;
 }
@@ -94,9 +119,16 @@ function thePoems() {
     `
 }
 
+function getCategory() {
+    document.getElementById
+}
+
 function renderPoem(poem) {
+    //debugger
     let div = document.createElement('div');
+    let br = document.createElement('br')
     let h4 = document.createElement('h4');
+    let byCategory = document.createElement('h5')
     let p = document.createElement('p');
     let likesButton = document.createElement('button')
     let poemsDiv = document.getElementById('poems')
@@ -112,13 +144,18 @@ function renderPoem(poem) {
     likesButton.addEventListener('click', addLike)
     deleteButtton.addEventListener('click', deletePoem)
 
+   
     h4.innerText = poem.title;
     p.innerText = poem.content;
+    byCategory.innerText = `Category: ${poem.category.name}`
    
+    
     div.appendChild(h4);
+    div.appendChild(byCategory)
     div.appendChild(p);
-    div.appendChild(deleteButtton)
+    div.appendChild(deleteButtton);
     div.appendChild(likesButton);
+    
 
     poemsDiv.appendChild(div);
 }
@@ -173,7 +210,7 @@ function getThisPoem() {
     })
     .then(function(data) {
         poems = data
-        console.log(poems)
+        //console.log(poems)
         renderPoems()
     })
 }
