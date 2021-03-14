@@ -224,6 +224,16 @@ function renderTemp() {
     resetMain();
     main().innerHTML = poemTemplate();
     freeVerseClick();
+    epicClick();
+    haikuClick();
+    narrativeClick();
+    pastoralClick();
+    sonnetClick();
+    odeClick();
+    limerickClick();
+    balladClick();
+    soliloquyClick();
+    villanelleClick();
     form().addEventListener('submit', submitPoemForm)
 
 }
@@ -362,23 +372,6 @@ function villanelleClick() {
         document.getElementById("dropdownMenuButton").innerHTML = "Villanele"
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 document.addEventListener("DOMContentLoaded", function() {
     //renderTemp();
