@@ -254,8 +254,10 @@ function submitPoemForm(e) {
         poem: {
             title: titleInput().value, 
             content: poemInput().value,
-            // category: categoryInput().value   
+            category_name: document.getElementById("dropdownMenuButton").innerHTML.toLowerCase()
+            
         }
+
     }
     fetch(baseUrl + '/poems', {
         headers: {
