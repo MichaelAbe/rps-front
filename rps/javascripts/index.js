@@ -6,6 +6,7 @@ function getPoems() {
     })
     .then(function(data) {
         poems = data
+        Poem.createFromCollection(data)
         console.log(poems)
         renderPoems()
     })
