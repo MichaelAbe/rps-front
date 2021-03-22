@@ -25,5 +25,15 @@ class Poem {
         collection.forEach(data => Poem.create(data))
     }
 
+    static renderPoems() {
+        resetMain();
+        main().innerHTML = thePoems();
+    
+        Poem.all.forEach(function (poem) {
+            renderPoem(poem)
+        })
+    }
+    
+
 }
 

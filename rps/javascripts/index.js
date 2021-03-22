@@ -6,9 +6,10 @@ function getPoems() {
     })
     .then(function(data) {
         poems = data
+       
         Poem.createFromCollection(data)
         console.log(poems)
-        renderPoems()
+        Poem.renderPoems()
     })
 }
 
@@ -183,15 +184,6 @@ function renderTemp() {
     villanelleClick();
     form().addEventListener('submit', submitPoemForm)
 
-}
-
-function renderPoems() {
-    resetMain();
-    main().innerHTML = thePoems();
-
-    poems.forEach(function (poem) {
-        renderPoem(poem)
-    })
 }
 
 
