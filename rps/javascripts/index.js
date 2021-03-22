@@ -64,13 +64,6 @@ function poemTemplate() {
     `;
 }
 
-function thePoems() {
-    return `
-    <h3>Poems</h3>
-    <div id="poems"></div>
-    `
-}
-
 function getCategory() {
     document.getElementById
 }
@@ -122,10 +115,10 @@ function deletePoem(e) {
         return response.json();
     })
     .then(function(data) {
-        poems = poems.filter(function(poem) {
+        Poem.all = Poem.all.filter(function(poem) {
             return poem.id !== data.id;
         })
-        renderPoems();
+        Poem.renderPoems();
     })
 }
 
@@ -163,7 +156,7 @@ function getThisPoem() {
     .then(function(data) {
         poems = data
         //console.log(poems)
-        renderPoems()
+        Poem.renderPoems()
     })
 }
 
@@ -210,8 +203,8 @@ function submitPoemForm(e) {
         return response.json();
     })
     .then( function(poem) {
-        poems.push(poem)
-        renderPoems();
+        Poem.all.push(poem)
+        Poem.renderPoems();
     })
     alert('Your Poem has been added');
 
@@ -234,7 +227,7 @@ function formLinkEvent() {
 function poemsLinkEvent() {
     poemsLink().addEventListener('click', function(e) {
         e.preventDefault();
-        renderPoems();
+        Poem.renderPoems();
     })
 }
 
