@@ -82,58 +82,6 @@ function getThisPoem() {
     })
 }
 
-
-function renderTemp() {
-    resetMain();
-    main().innerHTML = Poem.poemTemplate();
-    freeVerseClick();
-    epicClick();
-    haikuClick();
-    narrativeClick();
-    pastoralClick();
-    sonnetClick();
-    odeClick();
-    limerickClick();
-    balladClick();
-    soliloquyClick();
-    villanelleClick();
-    form().addEventListener('submit', submitPoemForm)
-
-}
-
-
-function submitPoemForm(e) {
-    e.preventDefault();
-    let strongParams = {
-        poem: {
-            title: titleInput().value, 
-            content: poemInput().value,
-            category_name: document.getElementById("dropdownMenuButton").innerHTML.toLowerCase()
-            
-        }
-
-    }
-    fetch(baseUrl + '/poems', {
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(strongParams),
-        method: "POST"
-    })
-    .then( function(response) {
-        return response.json();
-    })
-    .then( function(poem) {
-        Poem.all.push(poem)
-        Poem.renderPoems();
-    })
-    alert('Your Poem has been added');
-
-   
-}
-
-
 function likeButtonEvent() {
     document.getElementById()
 }
@@ -142,7 +90,7 @@ function likeButtonEvent() {
 function formLinkEvent() {
     formLink().addEventListener('click', function(e) {
         e.preventDefault();
-        renderTemp();
+        Poem.renderTemp();
     })
 }
 

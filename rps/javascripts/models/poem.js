@@ -70,6 +70,8 @@ class Poem {
         `
     }
 
+// ** TEMPLATES **
+
     static poemTemplate() {
         return `
         <h3>Write a Poem</h3>
@@ -112,11 +114,60 @@ class Poem {
         `;
     }
 
+    static renderTemp() {
+        resetMain();
+        main().innerHTML = Poem.poemTemplate();
+        freeVerseClick();
+        epicClick();
+        haikuClick();
+        narrativeClick();
+        pastoralClick();
+        sonnetClick();
+        odeClick();
+        limerickClick();
+        balladClick();
+        soliloquyClick();
+        villanelleClick();
+        form().addEventListener('submit', submitPoemForm)
+    
+    }
+
     static renderPoems() {
         resetMain();
         main().innerHTML = Poem.thePoems();
     
         Poem.all.forEach(poem => poem.render());
+    }
+
+// ** EVENT HANDELERS **
+
+    static submitPoemForm(e) {
+        e.preventDefault();
+        let strongParams = {
+            poem: {
+                title: titleInput().value, 
+                content: poemInput().value,
+                category_name: document.getElementById("dropdownMenuButton").innerHTML.toLowerCase()
+                
+            }
+    
+        }
+        fetch(baseUrl + '/poems', {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(strongParams),
+            method: "POST"
+        })
+        .then( function(response) {
+            return response.json();
+        })
+        .then( function(poem) {
+            Poem.create(poem)
+            Poem.renderPoems();
+        })
+        alert('Your Poem has been added');
     }
 
     // function deletePoem(e) {
