@@ -53,6 +53,7 @@ class Poem {
     }
 
     static create(attributes) {
+        
         let poem = new Poem(attributes);
         poem.save();
         return poem
@@ -128,7 +129,7 @@ class Poem {
         balladClick();
         soliloquyClick();
         villanelleClick();
-        form().addEventListener('submit', submitPoemForm)
+        form().addEventListener('submit', Poem.submitPoemForm)
     
     }
 
