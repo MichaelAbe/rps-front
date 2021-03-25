@@ -9,6 +9,7 @@ class Poem {
         this.category = {
             name: attributes.category.name
         }
+        this.created_at = attributes.created_at
     }
 
     render() {

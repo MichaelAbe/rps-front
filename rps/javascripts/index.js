@@ -82,6 +82,8 @@ function getThisPoem() {
     })
 }
 
+//  events
+
 function likeButtonEvent() {
     document.getElementById()
 }
